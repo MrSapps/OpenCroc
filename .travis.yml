@@ -70,3 +70,5 @@ addons:
     branch_pattern: coverity_scan
 env: 
   global: 
+     TOKEN=yeINEe8ahMmNizwM2CLmT6LSmWmqNL6Oe
+   
