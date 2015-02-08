@@ -26,6 +26,7 @@ before_script:
 - if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo apt-get install g++-4.9; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-4.9 90; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo update-alternatives --config gcc; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo update-alternatives --config g++; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" && "$CXX" == "g++" ]]; then sudo apt-get install ruby1.9.1 ruby1.9.1-dev; fi
