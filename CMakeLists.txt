@@ -61,7 +61,7 @@ else()
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage") # enabling coverage
 		
 		# we dont want high warning levels on 3rd party things since we won't be fixing those warnings
-		set_source_files_properties(${gmock_src} PROPERTIES COMPILE_FLAGS -WNoeffc++ -WNomissing-field-initializers)
+		set_source_files_properties(${gmock_src} PROPERTIES COMPILE_FLAGS "-WNoeffc++ -WNomissing-field-initializers")
 	endif()
 endif()
 
