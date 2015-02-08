@@ -14,6 +14,10 @@ set(OpenCroc_VERSION_PATCH 0)
 # Enable Visual Studio solution "folders"
 SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON) 
 
+# On Linux gtest needs pthreads
+if (UNIX)
+	find_package (Threads)
+endif()
 
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
   # CMake defaults to leaving CMAKE_BUILD_TYPE empty. This screws up
@@ -57,7 +61,7 @@ else()
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage") # enabling coverage
 		
 		# we dont want high warning levels on 3rd party things since we won't be fixing those warnings
-		set_source_files_properties(${gmock_src} PROPERTIES COMPILE_FLAGS -Wno-effc++)
+		set_source_files_properties(${gmock_src} PROPERTIES COMPILE_FLAGS -WNoeffc++ -WNomissing-field-initializers)
 	endif()
 endif()
 
