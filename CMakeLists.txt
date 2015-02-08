@@ -43,7 +43,7 @@ add_library(gmock STATIC ${gmock_src})
 add_executable(UnitTests
 	source/test/main.cpp
 )
-target_link_libraries(UnitTests gmock)
+target_link_libraries(UnitTests gmock ${CMAKE_THREAD_LIBS_INIT})
 add_test(NAME UnitTests COMMAND UnitTests WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 
